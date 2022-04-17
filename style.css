@@ -1,0 +1,137 @@
+
+
+/* Navigation font family & size */
+.navbar a {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9rem;
+  padding: 0px;
+  /* From Here */
+  position: relative;
+  transition: all 0.5s;
+  text-transform: uppercase;
+}
+
+
+/* Adapted from tutorial on Udemy */
+.collapse a:hover:after {
+  opacity: 1;
+  top: -4px;
+  right: -4px;
+}
+
+/* Adapted from tutorial on Udemy */
+  .navbar-collapse a:hover {
+  background-color: rgba(88, 183, 255, 0.3);
+}
+
+/* Centre aligns drop menu options */
+.navbar-collapse {
+  text-align: center;
+}
+
+body {
+  margin: 0px;
+  font-family: "Lato", sans-serif;
+}
+
+/* Adds blue line above main image */
+.banner-parent {
+  position: relative;
+  text-align: center;
+  color: white;
+  text-align: center;
+  border-top: 4px solid;
+  border-color: #004aca7b;
+}
+
+/* Positions and styles text on main image */
+.top-left {
+  position: absolute;
+  top: 50px;
+  left: 5%;
+  padding: 5px;
+  font-size: 4.3rem;
+  text-transform: uppercase;
+  font-family: 'Acme', sans-serif;
+  text-shadow: 2px 2px #00000031;
+  color: white;
+  background-color:#555555ea;
+
+}
+
+/* Positions and styles text on main image */
+.middle-left {
+  position: absolute;
+  top: 175px;
+  left: 5%;
+  padding: 5px;
+  font-size: 2.1rem;
+  text-transform: uppercase;
+  font-family: 'Acme', sans-serif;
+  text-shadow: 2px 2px #00000031;
+  color: white;
+  background-color:#555555ea;
+  margin-right: 20px;
+}
+
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Lato", sans-serif;
+  color: #555555;
+}
+
+/* Styles landing pages opening text */
+.landing-header {
+  text-align: center;
+  font-family: "Merriweather", serif;
+  color: rgb(66, 66, 66);
+}
+
+/* Styles landing page text after intro */
+.landing-text {
+  text-align: center;
+  font-family: "Merriweather", serif;
+  color: #353535;
+  padding-top: 30px;
+  line-height: 2;
+}
+
+
+/* Changes layout when below 992px */
+@media only screen and (max-width: 992px) {
+    .contact-wrapper {
+        justify-content: space-between;
+    }
+  }
+
+  /* Changes layout when below 640px */
+@media only screen and (max-width: 640px) {
+    .middle-left {
+      display: none;
+    }
+    .top-left{
+      margin-right: 10px;
+      display: none;
+    }
+
+    .email-wrapper{
+      display: none;
+    }
+
+  }
+/* Ultrawide resolution layout improvements */
+  @media only screen and (min-width: 1921px) {
+    .middle-left {
+      left: 33%;
+    }
+    .top-left{
+      margin-right: 10px;
+      left: 33%;
+    }
+  }
+
+  
