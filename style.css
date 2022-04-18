@@ -100,6 +100,15 @@ h6 {
   line-height: 2;
 }
 
+.login-wrapper{
+  min-width: 400px;
+  max-width: 600px;
+  background-color: rgba(169, 169, 169, 0.214);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+
 
 /* Changes layout when below 992px */
 @media only screen and (max-width: 992px) {
