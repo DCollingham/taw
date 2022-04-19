@@ -8,14 +8,14 @@ include_once 'includes\header.inc.php'
 
 <div class="login-wrapper mt-2">
 
-    <form>
+    <form action="includes/login.inc.php" method="post">
       <div class="form-group">
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+        <input type="text" class="form-control" name="username" placeholder="Enter username">
       </div>
       <div class="form-group">
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        <input type="password" class="form-control" name="password" placeholder="Enter Password">
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary" name="submit" btn-primary">Submit</button>
     </form>
 </div>
 
