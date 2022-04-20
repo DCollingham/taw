@@ -21,11 +21,6 @@ include_once 'includes\header.inc.php'
 
 </div>
 
-
-
-
-
-
 <?php
 include_once 'includes\footer.inc.php'
 ?>

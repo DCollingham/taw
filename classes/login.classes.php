@@ -27,7 +27,9 @@ class Login extends Dbh {
 
         if($pwdMatch)
         {
+            session_start();
             $_SESSION["username"] = $result['username'];
+            $_SESSION["account_type"] = $result['account_type'];
             header("location: ../index.php?error=none");
         } 
         else 
@@ -35,11 +37,7 @@ class Login extends Dbh {
             $stmt = null;
             header("location: ../login.php?error=wrongpassword");
         }
-
-        
-
     }
-
 }
 
   
