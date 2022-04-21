@@ -108,6 +108,16 @@ h6 {
   border-radius: 10px;
 }
 
+.form-dropdown{
+  color: grey;
+  display: block;
+  padding: 6px;
+  width: 100%;
+  margin-bottom: 12px;
+  border-color: #555555;
+  border-radius: 4px;
+  border-color: lightgray;
+}
 
 
 /* Changes layout when below 992px */
