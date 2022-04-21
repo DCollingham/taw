@@ -6,7 +6,7 @@ include_once 'includes\header.inc.php'
 <div class="container test d-flex justify-content-center">
 
     <div class="login-wrapper mt-2 mb-5">
-        <form action="includes/full_member.inc.php" method="post">
+        <form action="includes/member.inc.php" method="post">
         <div class="form-group">
                 <input type="text" name="first_name" class="form-control" placeholder="First Name">
             </div>
@@ -20,7 +20,7 @@ include_once 'includes\header.inc.php'
                 <input type="text" name="postcode" class="form-control" placeholder="Postcode">
             </div>
             <div class="form-group">
-                <input type="text" name="Phone Number" class="form-control" placeholder="Phone Number">
+                <input type="text" name="number" class="form-control" placeholder="Phone Number">
             </div>
             <button type="submit" name="submit" class="btn btn-primary">Submit</button>
         </form>
