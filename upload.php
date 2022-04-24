@@ -12,7 +12,7 @@ $categories = $category->getCategory('open');
 <div class="container test d-flex justify-content-center">
 
     <div class="login-wrapper mt-2 mb-5">
-        <form action="" method="post" enctype="multipart/form-data">
+        <form action="includes\upload.inc.php" method="post" enctype="multipart/form-data">
 
         <select class="form-select form-select-lg form-dropdown d-block" name="category">
             <?php foreach($categories as $cat): ?>
@@ -21,11 +21,10 @@ $categories = $category->getCategory('open');
         </select>
 
             <div class="form-group">
-                <input type="text" name="entry_name" class="form-control" id="formGroupExampleInput" placeholder="Name of entry">
+                <input type="text" name="image_name" class="form-control" placeholder="Name of entry">
             </div>
             <div class="form-group">    
                 <input type="file" name="fileToUpload" id="fileToUpload">
-                <input type="submit" value="Upload Image" name="submit">
             </div class="form-group">
             <button type="submit" name="submit" class="btn btn-primary">Submit</button>
         </form>
