@@ -101,12 +101,24 @@
                     <li class="nav-item pl-4">
                         <a class="nav-link" href="index.php">Home</a>
                     </li>
-                    <li class="nav-item pl-4">
-                        <a class="nav-link px-2" href="#">Competitions</a>
-                    </li>
-                    <li class="nav-item pl-4">
-                        <a class="nav-link px-2" href="create-comp.php">Admin</a>
-                    </li>
+                    <li class="nav-item dropdown text-align-center pl-4">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Competitions
+                    </a>
+                    <div class="dropdown-menu pl-1" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="create-comp.php">Create Competition</a>
+                      <a class="dropdown-item" href="#">Edit Competition</a>
+                      <a class="dropdown-item" href="#">Judge Competition</a>
+                  </li>
+                  <li class="nav-item dropdown text-align-center pl-4">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Events
+                  </a>
+                  <div class="dropdown-menu pl-1" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="create-comp.php">Create Event</a>
+                    <a class="dropdown-item" href="#">Register members</a>
+
+                </li>
                     <li class="nav-item pl-4">
                         <a class="nav-link px-2" href="member.php">Attend Event</a>
                     </li>

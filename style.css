@@ -119,6 +119,16 @@ h6 {
   border-color: lightgray;
 }
 
+.navbar-header{
+  text-align:center;
+}
+
+.navbar-toggle {
+  float: none;
+  margin-right:0;
+}
+
+
 
 /* Changes layout when below 992px */
 @media only screen and (max-width: 992px) {
@@ -139,6 +149,11 @@ h6 {
 
     .email-wrapper{
       display: none;
+    }
+    /* Centers burger menu text */
+    .dropdown-item{
+      text-align: center;
+      padding: 5px;
     }
 
   }
