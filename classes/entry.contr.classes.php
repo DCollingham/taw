@@ -6,7 +6,7 @@ class EntryContr extends Entry{
         private $category_id;
         private $image_name;
         private $image_url;
-        private $member_id;
+        private $login_id;
         private $points;
 
 
@@ -17,7 +17,7 @@ class EntryContr extends Entry{
             $this->category_id = $category_id;
             $this->image_name = $image_name;
             $this->image_url = $image_url;
-            $this->member_id = $_SESSION["member_id"];
+            $this->login_id = $_SESSION["login_id"];
             $this->points = 0;
         }
 
@@ -27,7 +27,7 @@ class EntryContr extends Entry{
         if(empty($this->category_id) ||
            empty($this->image_name) ||
            empty($this->image_url) ||
-           empty($this->member_id))
+           empty($this->login_id))
         {
             $result = false;
         } 
@@ -45,6 +45,6 @@ class EntryContr extends Entry{
             exit();
         }
 
-        $this->setEntry($this->category_id, $this->image_name, $this->image_url, $this->member_id, $this->points);
+        $this->setEntry($this->category_id, $this->image_name, $this->image_url, $this->login_id, $this->points);
     }
 }

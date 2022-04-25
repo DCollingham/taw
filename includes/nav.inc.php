@@ -109,6 +109,7 @@
                       <a class="dropdown-item" href="create-comp.php">Create Competition</a>
                       <a class="dropdown-item" href="#">Edit Competition</a>
                       <a class="dropdown-item" href="#">Judge Competition</a>
+                      <a class="dropdown-item" href="upload.php">Enter Competition</a>
                   </li>
                   <li class="nav-item dropdown text-align-center pl-4">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

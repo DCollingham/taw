@@ -9,7 +9,7 @@ class Member extends Dbh {
                                                        `postcode`, `number`, `login_id_fk`) 
                                                         VALUES (?,?,?,?,?,?);");
         session_start();
-        $login_id_fk = $_SESSION['member_id'];
+        $login_id_fk = $_SESSION['login_id'];
         // Executes the prepared statement and checks returned value
         if(!$stmt->execute(array($first_name, $last_name, $street_address, $postcode, $number, $login_id_fk))){
 

@@ -30,7 +30,7 @@ class Login extends Dbh {
             session_start();
             $_SESSION["username"] = $result['username'];
             $_SESSION["account_type"] = $result['account_type'];
-            $_SESSION["member_id"] = $result['member_id'];
+            $_SESSION["login_id"] = $result['login_id'];
             header("location: ../index.php?error=none");
         } 
         else 

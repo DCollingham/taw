@@ -4,7 +4,7 @@
 class Signup extends Dbh {
 
     protected function checkUser($username, $email){
-        $stmt = $this->connect()->prepare('SELECT member_id 
+        $stmt = $this->connect()->prepare('SELECT login_id 
                                            FROM member_login 
                                            WHERE username = ? or email = ?;');
 
