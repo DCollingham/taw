@@ -34,6 +34,16 @@ body {
   font-family: "Lato", sans-serif;
 }
 
+/* Styles bootstrap card holding image */
+.comp-card{
+  margin-bottom: 1rem;
+  font-size: 1.5em;
+}
+
+.btn-first, .btn-second, .btn-third{
+  margin: 3px;
+}
+
 /* Adds blue line above main image */
 .banner-parent {
   position: relative;

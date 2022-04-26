@@ -18,7 +18,7 @@ class EntryContr extends Entry{
             $this->image_name = $image_name;
             $this->image_url = $image_url;
             $this->login_id = $_SESSION["login_id"];
-            $this->points = 0;
+            $this->points = 5;
         }
 
 

@@ -13,7 +13,6 @@ class Category extends Dbh {
         }
     $category = $stmt->fetchAll();
     return $category;
-
     }  
 }
 
