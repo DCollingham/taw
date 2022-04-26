@@ -108,7 +108,7 @@
                     <div class="dropdown-menu pl-1" aria-labelledby="navbarDropdown">
                       <a class="dropdown-item" href="create-comp.php">Create Competition</a>
                       <a class="dropdown-item" href="#">Edit Competition</a>
-                      <a class="dropdown-item" href="#">Judge Competition</a>
+                      <a class="dropdown-item" href="score.php">Judge Competition</a>
                       <a class="dropdown-item" href="upload.php">Enter Competition</a>
                   </li>
                   <li class="nav-item dropdown text-align-center pl-4">
@@ -118,10 +118,10 @@
                   <div class="dropdown-menu pl-1" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="create-comp.php">Create Event</a>
                     <a class="dropdown-item" href="#">Register members</a>
-
                 </li>
+
                     <li class="nav-item pl-4">
-                        <a class="nav-link px-2" href="member.php">Attend Event</a>
+                        <a class="nav-link px-2" href="view_member.php">Members</a>
                     </li>
                     <li class="nav-item pl-4">
                         <a class="nav-link" href="includes/logout.inc.php">Logout</a>
