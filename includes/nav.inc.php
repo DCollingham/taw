@@ -116,7 +116,7 @@
                     Events
                   </a>
                   <div class="dropdown-menu pl-1" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="create-comp.php">Create Event</a>
+                    <a class="dropdown-item" href="create-event.php">Create Event</a>
                     <a class="dropdown-item" href="#">Register members</a>
                 </li>
 
