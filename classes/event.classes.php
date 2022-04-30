@@ -50,7 +50,22 @@ class Event extends Dbh {
         return $result;
     }
 
+    function viewEventRange($startDate, $endDate){
 
+        
+        $stmt = $this->connect()->prepare('SELECT * FROM SHOOT WHERE date >= ?');
+        
+        if(!$stmt->execute(array($startDate))){
+            print_r($stmt->errorInfo());
+            $stmt = null;
+            header("location: ../index.php?error=sqlfail");
+            exit();
+        }
+
+        //header("location: ../index.php?error=added");
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
 
 }
 

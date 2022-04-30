@@ -3,32 +3,32 @@
 class EventContr extends Event {
 
     //Class properties
-    private $location;
-    private $date;
+    // private $location;
+    // private $date;
 
 
-    public function __construct($location, $date){
+    // public function __construct($location, $date){
 
-        //Assigns variables to class properties                             
-        $this->location = $location;
-        $this->date = $date;   
+    //     //Assigns variables to class properties                             
+    //     $this->location = $location;
+    //     $this->date = $date;   
 
-    }
+    // }
 
-    public function newEvent(){
+    public function newEvent($location, $date){
         //Checks for empty input and displays any errors
-        if($this->emptyInput() == false) {
+        if($this->emptyInput($location, $date) == false) {
             header("location: ../index.php?error=emptyInput");
             exit();
         }
 
-        $this->addEvent($this->location, $this->date);
+        $this->addEvent($location, $date);
     }
 
-    private function emptyInput(){
+    private function emptyInput($location, $date){
 
-        if(empty($this->location) ||
-           empty($this->date))
+        if(empty($location) ||
+           empty($date))
         {
             $result = false;
         } 

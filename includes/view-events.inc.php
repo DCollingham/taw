@@ -4,8 +4,8 @@
 if(isset($_POST["submit"]))
 {
     //Gets data from form
-    $location = $_POST["location"];
-    $date = $_POST["date"];
+    $startDate = $_POST["startDate"];
+    $endDate = $_POST["endDate"];
 
 
     require_once "../classes/dbh.classes.php";
@@ -13,7 +13,7 @@ if(isset($_POST["submit"]))
     require_once "../classes/event.contr.classes.php";
     $event = new EventContr();
 
-    $event->newEvent($location, $date);
+    $event->viewEventRange($startDate, $endDate);
 
-    header("location: ../create-event.php?error=noneEntryAdded");
+    //header("location: ../create-event.php?error=noneEntryAdded");
 }
