@@ -44,6 +44,10 @@ body {
   margin: 3px;
 }
 
+th {
+  width: 350px;
+}
+
 /* Adds blue line above main image */
 .banner-parent {
   position: relative;

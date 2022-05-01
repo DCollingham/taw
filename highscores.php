@@ -5,8 +5,8 @@ require_once 'classes\highscores.classes.php';
 $highscore = new Highscore();
 $result = $highscore->getHighscores();
 ?>
-
-<h1 class="landing-header pt-5">Highscores</h1>
+<!-- Displays the overall winners by points for all categorys -->
+<h1 class="landing-header pt-5">All Time Highscores</h1>
 <div class="container test d-flex justify-content-center">
 
     <div class="container pt-5">
