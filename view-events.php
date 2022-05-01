@@ -5,7 +5,9 @@ require_once "classes/event.classes.php";
 
 $today = gmdate("d-m-Y");
 $event = new Event();
-$result = $event->viewEventRange(2021-06-30, 2023-06-30);
+$startDate =  strtotime("2022-03-27");
+$endDate =  strtotime("2025-06-30");
+$result = $event->viewEventRange($startDate, $endDate);
 print_r($result);
 ?>
 
@@ -40,18 +42,23 @@ print_r($result);
             <th scope="col">Members</th>
           </tr>
         </thead>
+
         <tbody>
+        <!-- Iterates through events and uses event id to find all attendees -->
+        <?php foreach($result as $shoot): 
+          $event_id = $shoot['event_id']; 
+          $attendees = $event->attending($event_id);
+          echo '
           <tr>
-            <th scope="row">09/05/17</th>
-            <td>Braunton Burrows</td>
-            <td>Ian, Tim, Rob, Lynda, Bill, Jemma, Angela, Gemma</td>
-          </tr>
-          <tr>
-            <th scope="row">09/05/17</th>
-            <td>Braunton Burrows</td>
-            <td>Ian, Tim, Rob, Lynda, Bill, Jemma, Angela, Gemma</td>
-          </tr>
-        </tbody>
+            <th scope="row">' . $shoot['date'] .'</th>
+            <td>' . $shoot['location'] . '</td>
+            <td>'; foreach($attendees as $member): echo $member['first_name'] . " " .  $member['last_name'] . ", "; endforeach; 
+            echo 
+           '</td>
+          </tr>';
+        endforeach; 
+        ?>
+
       </table>
       </div>
     </div>

@@ -16,7 +16,7 @@ $eventArr = $event->viewEvents();
     <!-- Select event from select box -->
     <select class="form-select form-select-lg form-dropdown d-block" name="event_id">
     <option selected disabled="disabled">Select an event</option>
-    <!-- Converts sql date to UK date format -->
+    <!-- Converts sql date to UK date format and populates select box -->
             <?php foreach($eventArr as $event): ?>
             <?php $date = strtotime($event['date']);?>
             <option value="<?=$event['event_id']; ?>"><?=$event['location'] ." - ". date('d-m-y', $date) ?></option>

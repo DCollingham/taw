@@ -17,5 +17,6 @@ if(isset($_POST["submit"]))
     //passed signup object to signup method
     $signup->signupUser();
 
-    header("location: ../index.php?error=none");
+
+    //header("location: ../member.php?error=none");
 }

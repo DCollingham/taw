@@ -1,5 +1,6 @@
 <?php
 
+//Gets competitions by categories, either open or closed
 class Category extends Dbh {
 
     function getCategory($status){

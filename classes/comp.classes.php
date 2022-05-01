@@ -1,8 +1,8 @@
 <?php
 //Class for interacting with database
 
-class Comp extends Dbh {
 
+class Comp extends Dbh {
 
     protected function setCategory($category, $date, $status){
         $stmt = $this->connect()->prepare('INSERT INTO comp_category (category, date, status)

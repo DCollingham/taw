@@ -15,7 +15,7 @@ class Member extends Dbh {
 
             //Used for error checking if statement failed
             //print_r(array($first_name, $last_name, $street_address, $postcode, $number, $login_id_fk));
-            //print_r($stmt->errorInfo());
+            print_r($stmt->errorInfo());
             $stmt = null;
             header("location: ../index.php?error=sqlfail");
             exit();
@@ -24,7 +24,7 @@ class Member extends Dbh {
         //Upgrades account to full if member details are correct
         $stmt = null;  
         $account_type = 'full';
-        $stmt = $this->connect()->prepare("UPDATE `member_login` SET `account_type`=:account_type WHERE `member_id`=:member_id"); 
+        $stmt = $this->connect()->prepare("UPDATE `member_login` SET `account_type`=:account_type WHERE `login_id`=:member_id"); 
         $stmt->bindParam(':member_id', $login_id_fk, PDO::PARAM_INT);
         $stmt->bindParam(':account_type', $account_type);
 
@@ -34,8 +34,9 @@ class Member extends Dbh {
             header("location: ../index.php?error=success");
             exit();
        } else {
+        print_r($stmt->errorInfo());
         $stmt = null;
-        header("location: ../index.php?error=accountUpdateFail");
+        //header("location: ../index.php?error=accountUpdateFail");
         exit();
        }
 

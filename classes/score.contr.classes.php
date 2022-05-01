@@ -53,13 +53,12 @@ class ScoreContr extends Score {
 
         if($this->first_place == $this->second_place ||
            $this->second_place == $this->third_place ||
-           $this->first_place == $this->third_place)  {
+           $this->first_place == $this->third_place) {
             $result = false;
            }
            else{
             $result = true;
            }
-
-        return $result;
+           return $result;
+        }
     }
-}

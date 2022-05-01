@@ -35,4 +35,34 @@ class Entry extends Dbh {
             }
         }
     }
+
+    function checkEntryAmount(){
+
+            $login_id = $_SESSION["login_id"];
+            $stmt = $this->connect()->prepare('SELECT COUNT(*) as total_rows FROM comp_entry
+                                               WHERE login_id_fk = ?');
+
+            if(!$stmt->execute(array($login_id))){
+                print_r($stmt->errorInfo());
+                $stmt = null;
+                //header("location: ../index.php?error=sqlfail");
+                exit();
+            }
+
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            $total_rows = $row['total_rows'];
+            $stmt = null;
+            return $total_rows;
+    }
+
+    function uploadImage($url){
+              //Upload script from W3 Schools
+      if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $url)) {
+        echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+      } else {
+        echo "Sorry, there was an error uploading your file.";
+      }
+        header("location: ../upload?error=noneImageUploaded");
+    }
+
 }

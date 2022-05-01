@@ -53,9 +53,35 @@ class Event extends Dbh {
     function viewEventRange($startDate, $endDate){
 
         
-        $stmt = $this->connect()->prepare('SELECT * FROM SHOOT WHERE date >= ?');
+        $stmt = $this->connect()->prepare("SELECT * FROM SHOOT where date between :start and :end;");
         
-        if(!$stmt->execute(array($startDate))){
+        //converts string to date and binds parameters
+        $sDate = date('Y-m-d', $startDate);
+        $eDate = date('Y-m-d', $endDate);
+        $stmt->bindValue(':start',$sDate, PDO::PARAM_STR);
+        $stmt->bindValue(':end', $eDate, PDO::PARAM_STR);
+        
+        if(!$stmt->execute()){
+            print_r($stmt->errorInfo());
+            $stmt = null;
+            header("location: ../index.php?error=sqlfail");
+            exit();
+        }
+
+        //header("location: ../index.php?error=added");
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    function attending($event_id){
+
+        
+        $stmt = $this->connect()->prepare('SELECT member.first_name, member.last_name FROM member_shoot
+                                           JOIN member_login ON member_shoot.login_id_fk = member_login.login_id
+                                           JOIN member ON member_login.login_id = member.login_id_fk
+                                           WHERE member_shoot.event_id_fk = ?;');
+        
+        if(!$stmt->execute(array($event_id))){
             print_r($stmt->errorInfo());
             $stmt = null;
             header("location: ../index.php?error=sqlfail");

@@ -13,10 +13,6 @@
                 <ul class="navbar-nav ">
                     <li class="nav-item pl-4">
                         <a class="nav-link" href="index.php">Home</a>
-                    </li>
-                    <li class="nav-item pl-4">
-                        <a class="nav-link px-2" href="#">Competitions</a>
-                    </li>
                     <li class="nav-item pl-4">
                         <a class="nav-link px-2" href="#">Gallery</a>
                     </li>
@@ -41,9 +37,6 @@
                 <ul class="navbar-nav ">
                     <li class="nav-item pl-4">
                         <a class="nav-link" href="index.php">Home</a>
-                    </li>
-                    <li class="nav-item pl-4">
-                        <a class="nav-link px-2" href="#">Competitions</a>
                     </li>
                     <li class="nav-item pl-4">
                         <a class="nav-link px-2" href="#">Gallery</a>
@@ -72,13 +65,13 @@
                         <a class="nav-link" href="index.php">Home</a>
                     </li>
                     <li class="nav-item pl-4">
-                        <a class="nav-link px-2" href="#">Competitions</a>
+                        <a class="nav-link px-2" href="upload.php">Competitions</a>
                     </li>
                     <li class="nav-item pl-4">
                         <a class="nav-link px-2" href="#">Gallery</a>
                     </li>
                     <li class="nav-item pl-4">
-                        <a class="nav-link px-2" href="member.php">Attend Event</a>
+                        <a class="nav-link px-2" href="join-event.php">Attend Event</a>
                     </li>
                     <li class="nav-item pl-4">
                         <a class="nav-link" href="includes/logout.inc.php">Logout</a>
