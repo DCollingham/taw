@@ -4,7 +4,7 @@ class Images extends Dbh {
 
     //Gets url & name from entries
     function getUrls($category_id){
-        $stmt = $this->connect()->prepare("SELECT image.image_url, image.image_name, image.image_id
+        $stmt = $this->connect()->prepare("SELECT image.image_url, image.image_name, image.image_id, comp_entry.category_id_fk
                                            FROM image
                                            INNER JOIN comp_entry
                                            ON image.image_id = comp_entry.image_id_fk

@@ -12,6 +12,7 @@
 }
 
 
+
 /* Adapted from tutorial on Udemy */
 .collapse a:hover:after {
   opacity: 1;
@@ -142,7 +143,11 @@ h6 {
   margin-right:0;
 }
 
+.footer-banner{
+  text-align: center;
+  font-size: 1.2rem;
 
+}
 
 /* Changes layout when below 992px */
 @media only screen and (max-width: 992px) {

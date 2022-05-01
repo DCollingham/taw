@@ -7,8 +7,6 @@ class CompContr extends Comp {
     private $date;
     private $status;
 
-
-    
     public function __construct($category, $date, $status){
 
         //Assigns variables to class properties                             

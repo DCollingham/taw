@@ -25,7 +25,7 @@ require_once('nav.inc.php');
     <div class="container d-flex justify-content-around">
 <?PHP
 drawNav();
-?>
+?> 
     </div>
     <div class="banner-parent">
         <!-- Display size optimisation -->

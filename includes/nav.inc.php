@@ -64,9 +64,15 @@
                     <li class="nav-item pl-4">
                         <a class="nav-link" href="index.php">Home</a>
                     </li>
-                    <li class="nav-item pl-4">
-                        <a class="nav-link px-2" href="upload.php">Competitions</a>
-                    </li>
+                    <li class="nav-item dropdown text-align-center pl-4">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Competitions
+                    </a>
+                    <div class="dropdown-menu pl-1" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="upload.php">Enter Competition</a>
+                      <a class="dropdown-item" href="winners.php">Category Winners</a>
+                      <a class="dropdown-item" href="highscores.php">Overall Highscores</a>
+                  </li>
                     <li class="nav-item pl-4">
                         <a class="nav-link px-2" href="#">Gallery</a>
                     </li>

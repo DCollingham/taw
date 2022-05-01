@@ -1,7 +1,7 @@
 <?php
 
 class Dbh {
-    //Allows extended classses to access
+    //Allows extended classses to access connect function
     protected function connect(){      
         try {
             $username = "root";

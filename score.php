@@ -1,14 +1,15 @@
 <?php
 include_once 'includes\header.inc.php';
 require_once 'classes\dbh.classes.php';
-require_once 'classes\category.classes.php';
 require_once 'classes\images.classes.php';
-$image = new Images();
-$result = $image->getUrls(4);
-?>
 
+$image = new Images();
+$category_id = $_POST['category'];
+$result = $image->getUrls($category_id);
+?>
 <h1 class="landing-header p-5">Score Entries</h1>
 <div class="container test d-block justify-content-center">
+
 
 <?php
         foreach($result as $imageUrl){
@@ -28,7 +29,6 @@ $result = $image->getUrls(4);
 <div class="login-wrapper mt-2">
 
     <form action="includes/score.inc.php" method="post">
-
     <label>First Place</label>
     <select class="form-select form-select-lg form-dropdown d-block" name="first">
     <option selected disabled="disabled">Select The Winner</option>
@@ -51,12 +51,10 @@ $result = $image->getUrls(4);
             <?php foreach($result as $entry): ?>
             <option value="<?=$entry[2]; ?>"><?=$entry[2] ." ". $entry[1]; ?></option>
             <?php endforeach; ?>
-    </select>
-
-      <button type="submit" class="btn btn-primary" name="submit" btn-primary">Submit</button>
+    </select>   
+      <button type="submit" class="btn btn-primary" name="submit" value="<?php echo htmlspecialchars($category_id); ?>"" btn-primary">Submit</button>
     </form>
 </div>
-
 </div>
 
 <?php

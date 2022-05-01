@@ -14,5 +14,6 @@ if(isset($_POST["submit"]))
 
     $event->joinEvent($login_id, $event_id);
     $eventArr = $event->viewEvents();
+    
     header("location: ../join-event.php?error=noneEventJoined");
 }

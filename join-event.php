@@ -4,6 +4,7 @@ require_once "classes/dbh.classes.php";
 require_once "classes/event.classes.php";
 $event = new Event();
 $eventArr = $event->viewEvents();
+print_r($eventArr);
 ?>
 
 

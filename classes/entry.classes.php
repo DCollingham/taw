@@ -1,7 +1,7 @@
 <?php
 
 class Entry extends Dbh {
-
+    //Adds entry to comp_entry & image details to image table
     function setEntry($category_id, $image_name, $image_url, $login_id, $points){
 
         $db = $this->connect();
@@ -35,7 +35,7 @@ class Entry extends Dbh {
             }
         }
     }
-
+    //Checks how many entries a user has already submitted
     function checkEntryAmount(){
 
             $login_id = $_SESSION["login_id"];
@@ -54,7 +54,7 @@ class Entry extends Dbh {
             $stmt = null;
             return $total_rows;
     }
-
+    //Uploads image to uploads folder
     function uploadImage($url){
               //Upload script from W3 Schools
       if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $url)) {

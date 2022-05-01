@@ -5,10 +5,13 @@
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" 
         crossorigin="anonymous"></script>
 
+        <div class="container-fluid footer-banner">
         <?php
                 if (isset($_SESSION['username'])) {
-                        echo "Welcome " . $_SESSION['username'];
+                        echo $_SESSION['username'];
                 }
         ?>
+        </div>
+
 </body>
 </html>

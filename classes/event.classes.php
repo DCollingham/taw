@@ -35,17 +35,22 @@ class Event extends Dbh {
 
     function viewEvents(){
 
+        $login_id =$_SESSION["login_id"];
         $today = gmdate("d-m-Y");
-        $stmt = $this->connect()->prepare('SELECT * FROM SHOOT WHERE date >= ?');
-        
-        if(!$stmt->execute(array($today))){
+        //Select all events which are NOT attended already
+        $stmt = $this->connect()->prepare('SELECT * FROM shoot
+                                           WHERE NOT EXISTS 
+                                           (SELECT * FROM member_shoot 
+                                           WHERE member_shoot.event_id_fk = shoot.event_id 
+                                           AND member_shoot.login_id_fk = :login_id)');
+
+        $stmt->bindValue(':login_id', $login_id, PDO::PARAM_STR);
+        if(!$stmt->execute()){
             print_r($stmt->errorInfo());
             $stmt = null;
             header("location: ../index.php?error=sqlfail");
             exit();
         }
-
-        //header("location: ../index.php?error=added");
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
