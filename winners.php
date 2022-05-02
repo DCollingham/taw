@@ -9,7 +9,7 @@ $highscore = new Highscore();
 ?>
 <!-- Displays the overall winners by points for all categorys -->
 <h1 class="landing-header pt-5">Category Winners</h1>
-<div class="container test d-flex justify-content-center">
+<div class="container test d-block justify-content-center">
 
 <?PHP foreach($allCats as $category): 
     $catName = $category['category'];

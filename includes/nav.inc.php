@@ -14,7 +14,7 @@
                     <li class="nav-item pl-4">
                         <a class="nav-link" href="index.php">Home</a>
                     <li class="nav-item pl-4">
-                        <a class="nav-link px-2" href="#">Gallery</a>
+                        <a class="nav-link px-2" href="gallery.php">Gallery</a>
                     </li>
                     <li class="nav-item pl-4">
                         <a class="nav-link" href="signup.php">Sign-up</a>
@@ -39,7 +39,7 @@
                         <a class="nav-link" href="index.php">Home</a>
                     </li>
                     <li class="nav-item pl-4">
-                        <a class="nav-link px-2" href="#">Gallery</a>
+                        <a class="nav-link px-2" href="gallery.php">Gallery</a>
                     </li>
                     <li class="nav-item pl-4">
                         <a class="nav-link px-2" href="member.php">Membership</a>
@@ -74,7 +74,7 @@
                       <a class="dropdown-item" href="highscores.php">Overall Highscores</a>
                   </li>
                     <li class="nav-item pl-4">
-                        <a class="nav-link px-2" href="#">Gallery</a>
+                        <a class="nav-link px-2" href="gallery.php">Gallery</a>
                     </li>
                     <li class="nav-item pl-4">
                         <a class="nav-link px-2" href="join-event.php">Attend Event</a>
@@ -106,8 +106,7 @@
                     </a>
                     <div class="dropdown-menu pl-1" aria-labelledby="navbarDropdown">
                       <a class="dropdown-item" href="create-comp.php">Create Competition</a>
-                      <a class="dropdown-item" href="#">Edit Competition</a>
-                      <a class="dropdown-item" href="score.php">Judge Competition</a>
+                      <a class="dropdown-item" href="select-category.php">Judge Competition</a>
                       <a class="dropdown-item" href="upload.php">Enter Competition</a>
                   </li>
                   <li class="nav-item dropdown text-align-center pl-4">
@@ -116,11 +115,11 @@
                   </a>
                   <div class="dropdown-menu pl-1" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="create-event.php">Create Event</a>
-                    <a class="dropdown-item" href="#">Register members</a>
+                    <a class="dropdown-item" href="view-events.php">View Events</a>
                 </li>
 
                     <li class="nav-item pl-4">
-                        <a class="nav-link px-2" href="view_member.php">Members</a>
+                        <a class="nav-link px-2" href="select-member.php">Members</a>
                     </li>
                     <li class="nav-item pl-4">
                         <a class="nav-link" href="includes/logout.inc.php">Logout</a>

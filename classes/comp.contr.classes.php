@@ -19,7 +19,7 @@ class CompContr extends Comp {
     public function newCategory(){
         //Checks for empty input and displays any errors
         if($this->emptyInput() == false) {
-            header("location: ../index.php?error=emptyInput");
+            header("location: ../create-comp.php?error=emptyInput");
             exit();
         }
 

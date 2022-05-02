@@ -1,4 +1,17 @@
 <?php
+//Redirect is page is accessed through url
+if(!isset($_POST["submit"]))
+{
+    header("location: select-category.php");
+}
+//Redirects if category not selected on previous page
+if(isset($_POST["submit"]))
+{
+    if($_POST['category'] == null){
+        header("location: select-category.php");
+    }
+}
+
 include_once 'includes\header.inc.php';
 require_once 'classes\dbh.classes.php';
 require_once 'classes\images.classes.php';
@@ -12,15 +25,8 @@ $result = $image->getUrls($category_id);
 
 
 <?php
-        foreach($result as $imageUrl){
-
-            echo'<div class="card comp-card">
-            <img class="card-img-top img-fluid" img src="uploads/' . $imageUrl[0] . '"'. 'alt="'. $imageUrl[1] . '" >
-            <div class="card-body">
-                <p class="card-text">' . $imageUrl[1]. "<br>No: ". $imageUrl[2] .'</p>
-            </div>
-            </div>';
-        }
+//Displays images of competition
+$image->displayImages($result)
 ?>
 
 <h1 class="landing-header pt-5" id="aboutus">Score Entries</h1>

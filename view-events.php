@@ -8,14 +8,13 @@ $event = new Event();
 $startDate =  strtotime("2022-03-27");
 $endDate =  strtotime("2025-06-30");
 $result = $event->viewEventRange($startDate, $endDate);
-print_r($result);
 ?>
 
 
 <h1 class="landing-header pt-5">View Events</h1>
 <div class="container test d-flex justify-content-center">
 
-<div class="login-wrapper mt-2">
+<!-- <div class="login-wrapper mt-2">
 
     <form action="includes/view-events.inc.php" method="post">
 
@@ -28,7 +27,7 @@ print_r($result);
 
       <button type="submit" class="btn btn-primary" name="submit" btn-primary">Submit</button>
     </form>
-</div>
+</div> -->
 
 </div>
 
@@ -48,9 +47,10 @@ print_r($result);
         <?php foreach($result as $shoot): 
           $event_id = $shoot['event_id']; 
           $attendees = $event->attending($event_id);
+          $newDate = date('d-m-Y', strtotime($shoot['date']));
           echo '
           <tr>
-            <th scope="row">' . $shoot['date'] .'</th>
+            <th scope="row">' . $newDate .'</th>
             <td>' . $shoot['location'] . '</td>
             <td>'; foreach($attendees as $member): echo $member['first_name'] . " " .  $member['last_name'] . ", "; endforeach; 
             echo 

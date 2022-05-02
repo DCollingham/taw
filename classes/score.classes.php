@@ -9,15 +9,6 @@ class Score extends Dbh {
        
        if(!$stmt->execute(array($points, $place))){
         print_r($stmt->errorInfo());
+        }
     }
-
-    //$result = $stmt->fetchAll();
-    //return $result;
-    print_r($stmt);
-    }
-    
-
-
-
-
 }

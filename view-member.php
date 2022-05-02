@@ -1,13 +1,23 @@
 <?php
+//Redirect if page is accessed through url
+if(!isset($_POST["submit"]))
+{
+    header("location: select-member.php");
+}elseif($_POST['member_id'] == null){
+        header("location: select-member.php");
+    }
+
 include_once 'includes\header.inc.php';
 require_once 'classes\dbh.classes.php';
 require_once 'classes\memdetails.classes.php';
+require_once 'classes\images.classes.php';
 
 //Creates object and calls getCategory to get list to populate categorys
 $details = new Details();
-$result = $details->memberDetails(14);
-print_r($result[1]);
-
+$member_id = $_POST['member_id'];
+$result = $details->memberDetails($member_id);
+$imgObj = new Images();
+$images = $imgObj->getImages($member_id);
 ?>
 
 <h1 class="landing-header pt-5" id="aboutus">Member Details</h1>
@@ -36,12 +46,12 @@ print_r($result[1]);
         <h1 class="landing-header pt-5" id="aboutus">Submissions</h1>
         <?php
         
-        foreach($result as $row){
+        foreach($images as $img){
 
             echo'<div class="card ">
-            <img class="card-img-top img-fluid" img src="uploads/' . $row['image_url'] . '"'. 'alt="'. $row['image_name'] . '" >
+            <img class="card-img-top img-fluid" img src="uploads/' . $img['image_url'] . '"'. 'alt="'. $img['image_name'] . '" >
             <div class="card-body">
-                <p>' . $row['category'] ." - ". $row['image_name']. " - ". $row['date'] .'</p>
+                <p>' . $img['category'] ." - ". $img['image_name']. " - ". $img['date'] .'</p>
             </div>
             </div>';
         }
@@ -53,5 +63,5 @@ print_r($result[1]);
 
 
 <?php
-include_once 'includes\header.inc.php'
+include_once 'includes\footer.inc.php'
 ?>

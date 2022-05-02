@@ -11,7 +11,10 @@
   text-transform: uppercase;
 }
 
-
+.intro-text{
+text-align: justify;
+line-height: 1.7rem;
+}
 
 /* Adapted from tutorial on Udemy */
 .collapse a:hover:after {

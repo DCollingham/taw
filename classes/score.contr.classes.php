@@ -22,11 +22,11 @@ class ScoreContr extends Score {
     public function scorePoints(){
         //Checks for empty input and displays any errors
         if($this->emptyInput() == false) {
-            header("location: ../index.php?error=emptyInput");
+            header("location: ../select-category.php?error=emptyInput");
             exit();
         }
         if($this->placeTaken() == false) {
-            header("location: ../index.php?error=placeTaken");
+            header("location: ../select-category.php?error=placeTaken");
             exit();
         }
         $this->setPoints($this->first_place_points, $this->first_place);

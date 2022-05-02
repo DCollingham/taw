@@ -58,13 +58,15 @@ class Event extends Dbh {
     function viewEventRange($startDate, $endDate){
 
         
-        $stmt = $this->connect()->prepare("SELECT * FROM SHOOT where date between :start and :end;");
+        $stmt = $this->connect()->prepare("SELECT * FROM SHOOT ORDER BY date;");
         
+
+        // "SELECT * FROM SHOOT where date between :start and :end;"
         //converts string to date and binds parameters
-        $sDate = date('Y-m-d', $startDate);
-        $eDate = date('Y-m-d', $endDate);
-        $stmt->bindValue(':start',$sDate, PDO::PARAM_STR);
-        $stmt->bindValue(':end', $eDate, PDO::PARAM_STR);
+        // $sDate = date('Y-m-d', $startDate);
+        // $eDate = date('Y-m-d', $endDate);
+        // $stmt->bindValue(':start',$sDate, PDO::PARAM_STR);
+        // $stmt->bindValue(':end', $eDate, PDO::PARAM_STR);
         
         if(!$stmt->execute()){
             print_r($stmt->errorInfo());
