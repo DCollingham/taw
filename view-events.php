@@ -54,7 +54,7 @@ $result = $event->viewEventRange($startDate, $endDate);
           <tr>
             <th scope="row">' . $newDate .'</th>
             <td>' . $shoot['location'] . '</td>
-            <td>'; foreach($attendees as $member): echo $member['first_name'] . " " .  $member['last_name'] . ", "; endforeach; 
+            <td>'; foreach($attendees as $member): echo $member['first_name'] . "-" .  $member['last_name'] . " "; endforeach; 
             echo 
            '</td>
           </tr>';

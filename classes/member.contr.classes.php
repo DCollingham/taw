@@ -34,10 +34,7 @@ class MemberContr extends Member {
             header("location: ../member.php?error=invalidAddress");
             exit();
         }
-        if($this->invalidAddress() == true) {
-            header("location: ../member.php?error=invalidPostcode");
-            exit();
-        }
+
 
         $this->setMember($this->first_name, $this->last_name, $this->street_address, $this->postcode, $this->number);
     }

@@ -19,6 +19,9 @@ function displayMessage()
         } else if ($_GET["error"] == "sqlfail") {
             $message = "Woops, something went wrong";
 
+        } else if ($_GET["error"] == "emailInvalid") {
+            $message = "Sorry, email address invalid";
+
         } else if ($_GET["error"] == "alreadyTaken") {
             $message = "Username or Email already exists";
 
@@ -42,6 +45,9 @@ function displayMessage()
 
         } else if ($_GET["error"] == "noneCompCreated") {
             $message = "Competition created!";
+
+        } else if ($_GET["error"] == "noneEntryAdded") {
+            $message = "Event Added!";
 
         } else if ($_GET["error"] == "noneEventJoined") {
             $message = "Event Joined Successfully!";

@@ -8,7 +8,8 @@ class Highscore extends Dbh {
                                            FROM comp_entry
                                            JOIN member_login ON comp_entry.login_id_fk = member_login.login_id
                                            JOIN member ON member_login.login_id = member.login_id_fk
-                                           GROUP BY member_login.login_id');
+                                           GROUP BY member_login.login_id
+                                           ORDER BY points DESC');
 
         //Checks for sql error
         if(!$stmt->execute()){

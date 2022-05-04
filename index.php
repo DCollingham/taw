@@ -1,7 +1,7 @@
 <?php
 require_once 'includes\header.inc.php'
 ?>
-<h1 class="landing-header" id="aboutus">Welcome</h1>
+<h1 class="landing-header pt-2" id="aboutus">Welcome</h1>
 <div class="container d-block justify-content-center intro-text">
 <!-- Display $_GET messages -->
 <div class="message d-block pb-0 pt-1"> <?php echo $message;?></div><br>

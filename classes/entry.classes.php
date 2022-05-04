@@ -36,13 +36,16 @@ class Entry extends Dbh {
         }
     }
     //Checks how many entries a user has already submitted
-    function checkEntryAmount(){
+    function checkEntryAmount($category_id){
 
             $login_id = $_SESSION["login_id"];
             $stmt = $this->connect()->prepare('SELECT COUNT(*) as total_rows FROM comp_entry
-                                               WHERE login_id_fk = ?');
+                                               WHERE login_id_fk = :login_id AND category_id_fk = :category_id');
 
-            if(!$stmt->execute(array($login_id))){
+            $stmt->bindParam(':login_id', $login_id, PDO::PARAM_INT);
+            $stmt->bindParam(':category_id', $category_id, PDO::PARAM_INT);
+
+            if(!$stmt->execute()){
                 print_r($stmt->errorInfo());
                 $stmt = null;
                 //header("location: ../index.php?error=sqlfail");
@@ -62,7 +65,7 @@ class Entry extends Dbh {
       } else {
         echo "Sorry, there was an error uploading your file.";
       }
-        header("location: ../upload.php?error=nonImageUploaded");
+        header("location: ../upload.php?error=noneImageUploaded");
     }
 
 }

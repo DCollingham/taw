@@ -14,7 +14,7 @@ if(isset($_POST["submit"]))
     include "../classes/entry.contr.classes.php";
     $entry = new entryContr($category_id, $image_name, $url);
 
-    $result = $entry->checkEntryAmount();
+    $result = $entry->checkEntryAmount($category_id);
     if($result < 3){
       $entry->uploadImage($url);
       $entry->Enter();
