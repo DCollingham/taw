@@ -1,7 +1,9 @@
 <?php
-include_once 'includes\header.inc.php';
+require_once 'includes\header.inc.php';
 require_once "classes/dbh.classes.php";
 require_once "classes/event.classes.php";
+require_once 'includes\priviledge.inc.php';
+setAccessLevel('admin');
 
 $today = gmdate("d-m-Y");
 $event = new Event();

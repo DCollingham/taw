@@ -1,5 +1,5 @@
 <?php
-include_once 'includes\header.inc.php'
+include_once 'includes\header.inc.php';
 ?>
 
 
@@ -7,7 +7,9 @@ include_once 'includes\header.inc.php'
 <div class="container test d-flex justify-content-center">
 
 <div class="login-wrapper mt-2">
-
+  <!-- Display $_GET messages -->
+  <div class="message"> <?php echo $message;?></div>
+  
     <form action="includes/login.inc.php" method="post">
       <div class="form-group">
         <input type="text" class="form-control" name="username" placeholder="Enter username">
@@ -22,5 +24,5 @@ include_once 'includes\header.inc.php'
 </div>
 
 <?php
-include_once 'includes\footer.inc.php'
+include_once 'includes\footer.inc.php';
 ?>

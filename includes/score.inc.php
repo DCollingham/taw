@@ -18,5 +18,5 @@ if(isset($_POST["submit"]))
     $score->scorePoints();
     $categories = new Category();
     $categories->setCatStatus('closed', $category_id);
-    header("location: ../select-category.php?error=none");
+    header("location: ../winners.php?error=none");
 }

@@ -1,6 +1,9 @@
 <?php
-include_once 'includes\header.inc.php';
-$today = gmdate("d-m-Y")
+require_once 'includes\header.inc.php';
+require_once 'includes\priviledge.inc.php';
+setAccessLevel('admin');
+$today = gmdate("d-m-Y");
+
 ?>
 
 

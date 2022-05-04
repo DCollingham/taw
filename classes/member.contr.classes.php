@@ -26,6 +26,18 @@ class MemberContr extends Member {
             header("location: ../index.php?error=emptyInput");
             exit();
         }
+        if($this->invalidName() == false) {
+            header("location: ../member.php?error=invalidName");
+            exit();
+        }
+        if($this->invalidAddress() == false) {
+            header("location: ../member.php?error=invalidAddress");
+            exit();
+        }
+        if($this->invalidAddress() == true) {
+            header("location: ../member.php?error=invalidPostcode");
+            exit();
+        }
 
         $this->setMember($this->first_name, $this->last_name, $this->street_address, $this->postcode, $this->number);
     }
@@ -46,4 +58,20 @@ class MemberContr extends Member {
 
         return $result;
     }
+
+    //Checks for invalid naming characters 
+    private function invalidName(){
+
+        return ctype_alpha($this->first_name) ||
+               ctype_alpha($this->last_name); 
+
+    }
+    //Checks for special characters in street address
+    private function invalidAddress(){
+        //https://stackoverflow.com/questions/3937569/preg-match-special-characters
+            return !preg_match('/[\'\/~`\!@#\$%\^&\*\(\)_\-\+=\{\}\[\]\|;:"\<\>,\.\?\\\]/', $this->street_address);
+        }
+
 }
+
+

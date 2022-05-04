@@ -38,6 +38,13 @@ body {
   font-family: "Lato", sans-serif;
 }
 
+.message{
+  text-align: center;
+  padding-bottom: 10px;
+  color: #555555;
+  font-size: small;
+}
+
 /* Styles bootstrap card holding image */
 .comp-card{
   margin-bottom: 1rem;

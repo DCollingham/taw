@@ -7,6 +7,7 @@ class SignupContr extends Signup {
     private $email;
     private $pwd;
     private $pwd_repeat;
+    private $account_type = 'basic';
 
     
     public function __construct($username, $email, $pwd, $pwd_repeat){
@@ -21,15 +22,23 @@ class SignupContr extends Signup {
     public function signupUser(){
         //Checks for empty input and displays any errors
         if($this->emptyInput() == false) {
-            header("location: ../index.php?error=emptyInput");
+            header("location: ../signup.php?error=emptyInput");
             exit();
         }
         if($this->alreadyTaken() == false) {
-            header("location: ../index.php?error=alreadyTaken");
+            header("location: ../signup.php?error=alreadyTaken");
+            exit();
+        }
+        if($this->invalidEmail() == false) {
+            header("location: ../signup.php?error=emailInvalid");
+            exit();
+        }
+        if($this->invalidCharacters() == false) {
+            header("location: ../signup.php?error=invalidCharacters");
             exit();
         }
 
-        $this->setUser($this->username, $this->pwd, $this->email);
+        $this->setUser($this->username, $this->pwd, $this->email, $this->account_type);
 
     }
 
@@ -59,4 +68,15 @@ class SignupContr extends Signup {
         }
         return $result;
     }
+
+    private function invalidEmail()
+    {
+        return filter_var($this->email, FILTER_VALIDATE_EMAIL); 
+    }
+
+    private function invalidCharacters()
+    {
+        return !preg_match('/[^A-Za-z0-9]/', $this->username); 
+    }
+    
 }

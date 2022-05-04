@@ -1,7 +1,7 @@
 <?php
 //Redirect is page is accessed through url
 
-include_once 'includes\header.inc.php';
+require_once 'includes\header.inc.php';
 require_once 'classes\dbh.classes.php';
 require_once 'classes\images.classes.php';
 

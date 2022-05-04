@@ -7,6 +7,9 @@ include_once 'includes\header.inc.php'
 <div class="container test d-flex justify-content-center">
 
     <div class="login-wrapper mt-2 mb-5">
+        <!-- Display $_GET messages -->
+        <div class="message"> <?php echo $message;?></div>
+        
         <form action="includes/signup.inc.php" method="post">
         <div class="form-group">
                 <input type="text" name="username" class="form-control" id="formGroupExampleInput" placeholder="Username">

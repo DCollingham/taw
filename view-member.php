@@ -1,4 +1,6 @@
 <?php
+require_once 'includes\priviledge.inc.php';
+setAccessLevel('admin');
 //Redirect if page is accessed through url
 if(!isset($_POST["submit"]))
 {
@@ -24,6 +26,9 @@ $images = $imgObj->getImages($member_id);
 <div class="container test d-flex justify-content-center">
 
     <div class="login-wrapper mt-2 mb-5">
+        <!-- Display $_GET messages -->
+        <div class="message"> <?php echo $message;?></div>
+
         <form action="includes/signup.inc.php" method="post">
             
             <div class="form-group">

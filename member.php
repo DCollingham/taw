@@ -1,11 +1,14 @@
 <?php
-include_once 'includes\header.inc.php'
+require_once 'includes\header.inc.php'
 ?>
 
 <h1 class="landing-header pt-5" id="aboutus">Become a full member to attend events</h1>
 <div class="container test d-flex justify-content-center">
 
     <div class="login-wrapper mt-2 mb-5">
+        <!-- Display $_GET messages -->
+        <div class="message"> <?php echo $message;?></div>
+        
         <form action="includes/member.inc.php" method="post">
         <div class="form-group">
                 <input type="text" name="first_name" class="form-control" placeholder="First Name">

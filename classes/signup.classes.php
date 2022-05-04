@@ -23,16 +23,16 @@ class Signup extends Dbh {
         return $result;
     }
 
-    protected function setUser($username, $pwd, $email){
+    protected function setUser($username, $pwd, $email, $account_type){
         $db = $this->connect();
-        $stmt = $db->prepare('INSERT INTO member_login (username, password, email)
-                                           VALUES (?, ?, ?);');
+        $stmt = $db->prepare('INSERT INTO member_login (username, password, email, account_type)
+                                           VALUES (?, ?, ?, ?);');
 
 
         //Hashes password
         $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
      
-        if(!$stmt->execute(array($username, $hashedPwd, $email))){
+        if(!$stmt->execute(array($username, $hashedPwd, $email, $account_type))){
             $stmt = null;
             header("location: ../index.php?error=loginsqlfail");
             exit();
@@ -43,7 +43,7 @@ class Signup extends Dbh {
         if($member_id){
             session_start();
             $_SESSION["username"] = $username;
-            $_SESSION["account_type"] = 'full';
+            $_SESSION["account_type"] = 'basic';
             $_SESSION["login_id"] = $member_id;
             $stmt = null;
             header("location: ../member.php?error=success");

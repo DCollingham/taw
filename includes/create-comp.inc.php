@@ -16,5 +16,5 @@ if(isset($_POST["submit"]))
     //passed member object to member method
     $category->newCategory();
 
-    header("location: ../index.php?error=none");
+    header("location: ../create-comp.php?error=noneCompCreated");
 }

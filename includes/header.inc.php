@@ -1,6 +1,12 @@
 <?PHP
-session_start();
+//Prevents an empty session from starting
+if(session_id() == '')
+{
+    session_start();
+}
 require_once('nav.inc.php');
+require_once('includes\error-display.inc.php');
+$message = displayMessage();
 ?>
 
 <!DOCTYPE html>
@@ -41,5 +47,4 @@ drawNav();
     </div>
 
 </body>
-
 </html>

@@ -1,4 +1,6 @@
 <?php
+require_once 'includes\priviledge.inc.php';
+setAccessLevel('admin');
 //Redirect is page is accessed through url
 if(!isset($_POST["submit"]))
 {
@@ -33,6 +35,8 @@ $image->displayImages($result)
 <div class="container test d-flex justify-content-center">
 
 <div class="login-wrapper mt-2">
+      <!-- Display $_GET messages -->
+      <div class="message"> <?php echo $message;?></div>
 
     <form action="includes/score.inc.php" method="post">
     <label>First Place</label>

@@ -1,9 +1,10 @@
 <?php
-include_once 'includes\header.inc.php'
+require_once 'includes\header.inc.php'
 ?>
-<h1 class="landing-header py-5" id="aboutus">Welcome</h1>
-<div class="container test d-flex justify-content-center intro-text">
-
+<h1 class="landing-header" id="aboutus">Welcome</h1>
+<div class="container d-block justify-content-center intro-text">
+<!-- Display $_GET messages -->
+<div class="message d-block pb-0 pt-1"> <?php echo $message;?></div><br>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin fermentum leo vel orci. Mattis rhoncus urna neque viverra justo nec. A pellentesque sit amet porttitor eget dolor morbi non arcu. Morbi non arcu risus quis varius quam quisque id diam. In pellentesque massa placerat duis ultricies lacus sed turpis. Lectus arcu bibendum at varius vel pharetra. Pretium lectus quam id leo in vitae turpis massa. Diam sit amet nisl suscipit adipiscing bibendum est. Libero nunc consequat interdum varius sit.
 <br><br>
 Dictumst quisque sagittis purus sit amet volutpat. Risus quis varius quam quisque id diam vel. Mauris rhoncus aenean vel elit. Ultricies integer quis auctor elit sed vulputate mi. Elit duis tristique sollicitudin nibh. Accumsan sit amet nulla facilisi morbi tempus iaculis. Amet consectetur adipiscing elit duis tristique sollicitudin nibh sit amet. Tellus integer feugiat scelerisque varius morbi. Pulvinar neque laoreet suspendisse interdum consectetur libero id faucibus nisl. Purus semper eget duis at tellus at urna. Imperdiet sed euismod nisi porta lorem mollis aliquam ut. Amet luctus venenatis lectus magna fringilla urna porttitor rhoncus. Tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras fermentum.

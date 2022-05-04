@@ -1,7 +1,9 @@
 <?php
-include_once 'includes\header.inc.php';
+require_once 'includes\header.inc.php';
 require_once 'classes\dbh.classes.php';
 require_once 'classes\category.classes.php';
+require_once 'includes\priviledge.inc.php';
+setAccessLevel('full');
 
 //Creates object and calls getCategory to get list to populate categorys
 $category = new Category();
@@ -12,6 +14,9 @@ $categories = $category->getCategory('open');
 <div class="container test d-flex justify-content-center">
 
     <div class="login-wrapper mt-2 mb-5">
+        <!-- Display $_GET messages -->
+        <div class="message"> <?php echo $message;?></div>
+        
         <form action="includes\upload.inc.php" method="post" enctype="multipart/form-data">
 
         <select class="form-select form-select-lg form-dropdown d-block" name="category">

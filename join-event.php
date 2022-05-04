@@ -1,7 +1,9 @@
 <?php
-include_once 'includes\header.inc.php';
+require_once 'includes\header.inc.php';
 require_once "classes/dbh.classes.php";
 require_once "classes/event.classes.php";
+require_once 'includes\priviledge.inc.php';
+setAccessLevel('full');
 $event = new Event();
 $eventArr = $event->viewEvents();
 ?>
@@ -11,6 +13,8 @@ $eventArr = $event->viewEvents();
 <div class="container test d-flex justify-content-center">
 
 <div class="login-wrapper mt-2">
+<!-- Display $_GET messages -->
+<div class="message"> <?php echo $message;?></div>
 
     <form action="includes/join-event.inc.php" method="post">
     <!-- Select event from select box -->

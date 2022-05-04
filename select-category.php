@@ -1,7 +1,9 @@
 <?php
-include_once 'includes\header.inc.php';
+require_once 'includes\header.inc.php';
 require_once 'classes\dbh.classes.php';
 require_once 'classes\category.classes.php';
+require_once 'includes\priviledge.inc.php';
+setAccessLevel('admin');
 $categories = new Category();
 $catArr = $categories->getCategory('open');
 ?>
@@ -11,6 +13,9 @@ $catArr = $categories->getCategory('open');
 <div class="container test d-flex justify-content-center">
 
     <div class="login-wrapper mt-2 mb-5">
+        <!-- Display $_GET messages -->
+        <div class="message"> <?php echo $message;?></div>
+
         <form action="score.php" method="post">
         <select class="form-select form-select-lg form-dropdown d-block" name="category">
 <option selected disabled="disabled">Select Category</option>

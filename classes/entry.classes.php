@@ -62,7 +62,7 @@ class Entry extends Dbh {
       } else {
         echo "Sorry, there was an error uploading your file.";
       }
-        header("location: ../upload?error=noneImageUploaded");
+        header("location: ../upload.php?error=nonImageUploaded");
     }
 
 }

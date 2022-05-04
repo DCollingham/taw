@@ -41,7 +41,7 @@ class EntryContr extends Entry{
     public function Enter(){
         //Checks for empty input and displays any errors
         if($this->emptyInput() == false) {
-            header("location: ../index.php?error=emptyInput");
+            header("location: ../upload.php?error=emptyInput");
             exit();
         }
 

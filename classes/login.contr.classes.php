@@ -31,7 +31,7 @@ class LoginContr extends Login {
     public function loginUser(){
         //Checks for empty input and displays any errors
         if($this->emptyInput() == false) {
-            header("location: ../index.php?error=emptyInput");
+            header("location: ../login.php?error=emptyInput");
             exit();
         }
 
