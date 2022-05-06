@@ -19,26 +19,39 @@ class MemberContr extends Member {
         $this->postcode = $postcode;   
         $this->number = $number;   
     }
-
+    
+    //Checks for field errors
     public function signupMember(){
-        //Checks for empty input and displays any errors
+
         if($this->emptyInput() == false) {
             header("location: ../index.php?error=emptyInput");
             exit();
         }
-        if($this->invalidName() == false) {
+        if($this->invalidName($this->first_name) == false) {
+            header("location: ../member.php?error=invalidName");
+            exit();   
+        }
+        if($this->invalidName($this->last_name) == false) {
             header("location: ../member.php?error=invalidName");
             exit();
         }
-        if($this->invalidAddress() == false) {
+        if($this->invalidAddress($this->street_address) == false) {
             header("location: ../member.php?error=invalidAddress");
             exit();
         }
+        if($this->invalidAddress($this->postcode) == false) {
+            header("location: ../member.php?error=invalidAddress");
+            exit();
+        }
+        if($this->isInt($this->number) == false) {
+            header("location: ../member.php?error=invalidNumber");
+            exit();
+        }
 
-
+        //If all checks pass, this runs and user details is added
         $this->setMember($this->first_name, $this->last_name, $this->street_address, $this->postcode, $this->number);
     }
-
+    //Checks for empty input
     private function emptyInput(){
 
         if(empty($this->first_name) ||
@@ -57,18 +70,21 @@ class MemberContr extends Member {
     }
 
     //Checks for invalid naming characters 
-    private function invalidName(){
+    private function invalidName($field){
 
-        return ctype_alpha($this->first_name) ||
-               ctype_alpha($this->last_name); 
-
+        return ctype_alpha($field);
     }
+
     //Checks for special characters in street address
-    private function invalidAddress(){
+    private function invalidAddress($field){
         //https://stackoverflow.com/questions/3937569/preg-match-special-characters
-            return !preg_match('/[\'\/~`\!@#\$%\^&\*\(\)_\-\+=\{\}\[\]\|;:"\<\>,\.\?\\\]/', $this->street_address);
+            return !preg_match('/[\'\/~`\!@#\$%\^&\*\(\)_\-\+=\{\}\[\]\|;:"\<\>,\.\?\\\]/', $field);
         }
 
+    //Checks phone number
+    private function isInt($field){
+            return intval($field);
+        }
 }
 
 

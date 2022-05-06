@@ -1,5 +1,12 @@
 <?php
 include_once 'includes\header.inc.php';
+//Logs the user out if they try to access login page while logged in
+if(isset($_SESSION)){
+  session_unset();
+  session_destroy();
+}
+
+
 ?>
 
 

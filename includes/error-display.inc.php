@@ -22,6 +22,9 @@ function displayMessage()
         } else if ($_GET["error"] == "emailInvalid") {
             $message = "Sorry, email address invalid";
 
+        } else if ($_GET["error"] == "invalidName") {
+            $message = "Sorry, name should not contain special characters or numbers";
+
         } else if ($_GET["error"] == "alreadyTaken") {
             $message = "Username or Email already exists";
 
@@ -40,6 +43,9 @@ function displayMessage()
         } else if ($_GET["error"] == "invalidAddress") {
             $message = "Street address should not contain special characters";
 
+        } else if ($_GET["error"] == "invalidNumber") {
+            $message = "Please enter a valid phone number";
+
         } else if ($_GET["error"] == "success") {
             $message = "Account Created";
 
@@ -48,6 +54,12 @@ function displayMessage()
 
         } else if ($_GET["error"] == "noneEntryAdded") {
             $message = "Event Added!";
+
+        } else if ($_GET["error"] == "wrongDate") {
+            $message = "The date is not in the correct format!";
+
+        } else if ($_GET["error"] == "placeTaken") {
+            $message = "Please select a different photo for each posistion";
 
         } else if ($_GET["error"] == "noneEventJoined") {
             $message = "Event Joined Successfully!";
