@@ -16,3 +16,4 @@ function setAccessLevel($acountTypeReq){
             header("location: login.php?error=wrongAccessLevel");
         }
 }
+
