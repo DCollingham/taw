@@ -40,6 +40,9 @@ function displayMessage()
         } else if ($_GET["error"] == "noneImageUploaded") {
             $message = "Image uploaded successfully";
 
+        } else if ($_GET["error"] == "wrongImageFormat") {
+            $message = "Please upload only images";
+
         } else if ($_GET["error"] == "invalidAddress") {
             $message = "Street address should not contain special characters";
 

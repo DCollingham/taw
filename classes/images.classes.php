@@ -17,7 +17,7 @@ class Images extends Dbh {
         return $result;
         }
 
-            //Gets url & name from entries
+    //Gets url & name from entries
     function getAllUrls(){
         $stmt = $this->connect()->prepare("SELECT image.image_url, image.image_name, image.image_id, comp_category.category
                                            FROM image
@@ -62,12 +62,5 @@ class Images extends Dbh {
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
             return $result;
             }
-
 }
-
-
-
-
-
-
 ?>

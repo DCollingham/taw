@@ -3,11 +3,11 @@
 
 class Event extends Dbh {
 
-
+    //Adds event into shoot table
     protected function addEvent($location, $date){
         $stmt = $this->connect()->prepare('INSERT INTO shoot (location, date)
                                            VALUES (?, ?);');
-       
+       //Converts date format
        $newDate = date("Y-m-d", strtotime($date));  
         if(!$stmt->execute(array($location, $newDate))){
             print_r($stmt->errorInfo());
@@ -18,7 +18,7 @@ class Event extends Dbh {
         $stmt = null;
 
     }
-
+    //Register a members to an event
     function joinEvent($login_id, $event_id){
         $stmt = $this->connect()->prepare('INSERT INTO member_shoot (login_id_fk, event_id_fk)
                                            VALUES (?, ?);');    
@@ -30,9 +30,8 @@ class Event extends Dbh {
             //exit();
         }
         $stmt = null;
-        //header("location: ../index.php?error=added");
     }
-
+    //View all events
     function viewEvents(){
 
         $login_id =$_SESSION["login_id"];
@@ -55,19 +54,11 @@ class Event extends Dbh {
         return $result;
     }
 
-    function viewEventRange($startDate, $endDate){
-
-        
+    //view all events 
+    function viewEventRange(){
+       
         $stmt = $this->connect()->prepare("SELECT * FROM SHOOT ORDER BY date;");
-        
-
-        // "SELECT * FROM SHOOT where date between :start and :end;"
-        //converts string to date and binds parameters
-        // $sDate = date('Y-m-d', $startDate);
-        // $eDate = date('Y-m-d', $endDate);
-        // $stmt->bindValue(':start',$sDate, PDO::PARAM_STR);
-        // $stmt->bindValue(':end', $eDate, PDO::PARAM_STR);
-        
+         
         if(!$stmt->execute()){
             print_r($stmt->errorInfo());
             $stmt = null;
@@ -79,10 +70,9 @@ class Event extends Dbh {
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
-
+    //Displays all events and any attending members
     function attending($event_id){
-
-        
+   
         $stmt = $this->connect()->prepare('SELECT member.first_name, member.last_name FROM member_shoot
                                            JOIN member_login ON member_shoot.login_id_fk = member_login.login_id
                                            JOIN member ON member_login.login_id = member.login_id_fk

@@ -10,10 +10,9 @@ if(isset($_POST["submit"]))
     require_once "../classes/dbh.classes.php";
     require_once "../classes/event.classes.php";
     
+    //Joins an event
     $event = new Event();
-
     $event->joinEvent($login_id, $event_id);
     $eventArr = $event->viewEvents();
-    
     header("location: ../join-event.php?error=noneEventJoined");
 }

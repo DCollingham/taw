@@ -16,8 +16,7 @@ if(isset($_POST["submit"]))
     include "../classes/member.contr.classes.php";
     $member = new memberContr($first_name, $last_name, $address, $postcode, $number);
 
-    //passed member object to member method
+    //Signs up member
     $member->signupMember();
-
     header("location: ../index.php?error=none");
 }

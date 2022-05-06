@@ -26,7 +26,7 @@
             </div>
         </nav>';}
 
-
+        //Full member menu
         elseif ($_SESSION["account_type"] == 'full') {
             echo'
             <nav class="navbar navbar-expand-lg navbar-light align-items-end p-0 py-2">
@@ -62,7 +62,7 @@
         </nav>
         ';
         }
-
+        //Basic member menu
         elseif ($_SESSION["account_type"] == 'basic') {
             echo'
             <nav class="navbar navbar-expand-lg navbar-light align-items-end p-0 py-2">
@@ -86,7 +86,7 @@
                 </ul>
             </div>
         </nav>';}
-
+        //Admin Memu
         elseif ($_SESSION["account_type"] == 'admin') {
             echo'
             <nav class="navbar navbar-expand-lg navbar-light align-items-end p-0 py-2">

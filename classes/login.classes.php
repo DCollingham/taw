@@ -3,7 +3,7 @@
 
 class Login extends Dbh {
 
-
+    //Checks if user exists then logs in on successfull credentials
     protected function getUser($username, $pwd){
         $stmt = $this->connect()->prepare('SELECT * FROM member_login
                                            WHERE username = ?;');

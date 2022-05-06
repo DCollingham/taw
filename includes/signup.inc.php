@@ -14,9 +14,7 @@ if(isset($_POST["submit"]))
     include "../classes/signup.contr.classes.php";
     $signup = new SignupContr($username, $email, $pwd, $pwd_repeat);
 
-    //passed signup object to signup method
+    //Signs up user
     $signup->signupUser();
 
-
-    //header("location: ../member.php?error=none");
 }

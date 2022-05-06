@@ -2,6 +2,7 @@
 
 class Highscore extends Dbh {
 
+    //Gets the total score of each member
     function getHighscores(){
         $stmt = $this->connect()->prepare('SELECT member.first_name, member.last_name, 
                                            SUM(points) as points
@@ -21,6 +22,7 @@ class Highscore extends Dbh {
         return $result;
     }
 
+    //Gets the score for each member for a category
     function getCatScores($category_id){
         $stmt = $this->connect()->prepare('SELECT member.first_name, member.last_name, comp_category.category,
                                             SUM(points) as points

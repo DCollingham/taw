@@ -16,7 +16,7 @@ class Category extends Dbh {
     return $category;
     }  
 
-
+    //Change category status to open or closed
     function setCatStatus($status, $category_id){
         $stmt = $this->connect()->prepare("UPDATE comp_category
                                            SET comp_category.status = :status 
@@ -28,9 +28,6 @@ class Category extends Dbh {
 
     if(!$stmt->execute()){
         print_r($stmt->errorInfo());
-    //$stmt = null;
-    //header("location: ../index.php?error=sqlfail");
-    //exit();
         }
     $category = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $category;

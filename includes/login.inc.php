@@ -12,10 +12,8 @@ if(isset($_POST["submit"]))
     require_once "../classes/login.classes.php";
     require_once "../classes/login.contr.classes.php";
 
+    //Logs user in
     $login = new LoginContr($username, $pwd);
-
-    //passed login object to login method
     $login->loginUser();
 
-    //header("location: ../index.php?error=none");
 }

@@ -2,7 +2,9 @@
 
 class EventContr extends Event {
 
+    //Creates a new event
     public function newEvent($location, $date){
+
         //Checks for empty input and displays any errors
         if($this->emptyInput($location, $date) == false) {
             header("location: ../create-event.php?error=emptyInput");

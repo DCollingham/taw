@@ -48,7 +48,7 @@ class ScoreContr extends Score {
 
         return $result;
     }
-
+    //Checks if an admin assigns a result to photo twice
     private function placeTaken(){
 
         if($this->first_place == $this->second_place ||

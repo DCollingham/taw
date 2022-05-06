@@ -12,6 +12,7 @@ setAccessLevel('admin');
 <div class="login-wrapper mt-2">
   <!-- Display $_GET messages -->
     <div class="message"> <?php echo $message;?></div>
+
     <form action="includes/create-comp.inc.php" method="post">
       <div class="form-group">
         <input type="text" class="form-control" name="category" placeholder="Competition Category">

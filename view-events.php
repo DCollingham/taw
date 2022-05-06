@@ -7,9 +7,7 @@ setAccessLevel('admin');
 
 $today = gmdate("d-m-Y");
 $event = new Event();
-$startDate =  strtotime("2022-03-27");
-$endDate =  strtotime("2025-06-30");
-$result = $event->viewEventRange($startDate, $endDate);
+$result = $event->viewEventRange();
 ?>
 
 

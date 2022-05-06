@@ -15,7 +15,7 @@ class CompContr extends Comp {
         $this->status = $status;
 
     }
-
+    //Creates a new category if error check pass
     public function newCategory(){
         //Checks for empty input and displays any errors
         if($this->emptyInput() == false) {
@@ -29,7 +29,7 @@ class CompContr extends Comp {
 
         $this->setCategory($this->category, $this->date, $this->status);
     }
-
+    //Checks for empty imput
     private function emptyInput(){
 
         if(empty($this->category) ||
@@ -44,6 +44,7 @@ class CompContr extends Comp {
 
         return $result;
     }
+        //Checks for valid date format
         //https://stackoverflow.com/questions/19271381/correctly-determine-if-date-string-is-a-valid-date-in-that-format
         function isValidDate($date) {
             return date('d-m-Y', strtotime($date)) === $date;

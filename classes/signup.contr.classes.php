@@ -57,7 +57,7 @@ class SignupContr extends Signup {
 
         return $result;
     }
-
+    //Checks if username already taked
     private function alreadyTaken(){
         if(!$this->checkUser($this->username,$this->email))
         {
@@ -68,12 +68,12 @@ class SignupContr extends Signup {
         }
         return $result;
     }
-
+    //Checks if email is valud
     private function invalidEmail()
     {
         return filter_var($this->email, FILTER_VALIDATE_EMAIL); 
     }
-
+    //Checks for invalid characters
     private function invalidCharacters()
     {
         return !preg_match('/[^A-Za-z0-9]/', $this->username); 

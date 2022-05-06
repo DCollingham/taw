@@ -3,7 +3,7 @@
 
 class Member extends Dbh {
 
-
+    //Addes member details to member table
     protected function setMember($first_name, $last_name, $street_address, $postcode, $number){
         $stmt = $this->connect()->prepare("INSERT INTO `member`(`first_name`, `last_name`, `street_address`,
                                                        `postcode`, `number`, `login_id_fk`) 

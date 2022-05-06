@@ -14,7 +14,8 @@ if(isset($_POST["submit"]))
     include "../classes/score.contr.classes.php";
     include "../classes/category.classes.php";
     $score = new ScoreContr($first_place, $second_place, $third_place);
-
+    
+    //Scores photos and closes competition
     $score->scorePoints();
     $categories = new Category();
     $categories->setCatStatus('closed', $category_id);
