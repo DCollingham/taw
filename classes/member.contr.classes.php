@@ -51,6 +51,11 @@ class MemberContr extends Member {
         //If all checks pass, this runs and user details is added
         $this->setMember($this->first_name, $this->last_name, $this->street_address, $this->postcode, $this->number);
     }
+
+    public function setUpdate($member_id){
+        $this->updateMember($this->first_name, $this->last_name, $this->street_address, $this->postcode, $this->number, intval($member_id));
+    }
+    
     //Checks for empty input
     private function emptyInput(){
 

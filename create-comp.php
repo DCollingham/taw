@@ -5,7 +5,7 @@ $today = gmdate("d-m-Y");
 setAccessLevel('admin');
 ?>
 
-
+<!-- Form to create a competition -->
 <h1 class="landing-header pt-5">Create Competition Category</h1>
 <div class="container test d-flex justify-content-center">
 

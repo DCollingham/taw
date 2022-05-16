@@ -61,6 +61,9 @@ function displayMessage()
         } else if ($_GET["error"] == "wrongDate") {
             $message = "The date is not in the correct format!";
 
+        } else if ($_GET["error"] == "noneUpdated") {
+            $message = "User Updated";
+
         } else if ($_GET["error"] == "placeTaken") {
             $message = "Please select a different photo for each posistion";
 

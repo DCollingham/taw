@@ -29,23 +29,27 @@ $images = $imgObj->getImages($member_id);
         <!-- Display $_GET messages -->
         <div class="message"> <?php echo $message;?></div>
 
-        <form action="includes/signup.inc.php" method="post">
+        <form action="includes/member.inc.php" method="post">
             
-            <div class="form-group">
-                <?php echo'<input type="text" class="form-control" value="' .  $result[0]['first_name'] . '" disabled>';?>
+        <div class="form-group">
+                <?php echo'<input type="text" name="member_id" class="form-control" value="' .  $result[0]['member_id'] . '" readonly>';?>
             </div>
             <div class="form-group">
-                <?php echo'<input type="text" class="form-control" value="' .  $result[0]['last_name'] . '" disabled>';?>
+                <?php echo'<input type="text" name="first_name" class="form-control" value="' .  $result[0]['first_name'] . '" >';?>
             </div>
             <div class="form-group">
-                <?php echo'<input type="text" class="form-control" value="' .  $result[0]['street_address'] . '" disabled>';?>
+                <?php echo'<input type="text" name="last_name" class="form-control" value="' .  $result[0]['last_name'] . '" >';?>
             </div>
             <div class="form-group">
-                <?php echo'<input type="text" class="form-control" value="' .  $result[0]['postcode'] . '" disabled>';?>
+                <?php echo'<input type="text" name="address" class="form-control" value="' .  $result[0]['street_address'] . '" >';?>
             </div>
             <div class="form-group">
-                <?php echo'<input type="text" class="form-control" value="' .  $result[0]['number'] . '" disabled>';?>
+                <?php echo'<input type="text" name="postcode" class="form-control" value="' .  $result[0]['postcode'] . '" >';?>
             </div>
+            <div class="form-group">
+                <?php echo'<input type="text" name="number" class="form-control" value="' .  $result[0]['number'] . '">';?>
+            </div>
+            <button type="submit" class="btn btn-primary" name="update" btn-primary">Submit Edit</button>
         </form>
 
         <h1 class="landing-header pt-5" id="aboutus">Submissions</h1>

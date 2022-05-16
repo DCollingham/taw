@@ -39,7 +39,26 @@ class Member extends Dbh {
         //header("location: ../index.php?error=accountUpdateFail");
         exit();
        }
-
-
     }
+
+    function updateMember($first_name, $last_name, $street_address, $postcode, $number, $member_id){
+        $stmt = $this->connect()->prepare("UPDATE member SET first_name = :first_name,
+                                           last_name = :last_name,
+                                           street_address = :street_address,
+                                           postcode = :postcode,
+                                           number = :number
+                                           WHERE member.member_id = :member_id");
+       
+        $stmt->bindParam(':first_name', $first_name, PDO::PARAM_STR);           
+        $stmt->bindParam(':last_name', $last_name, PDO::PARAM_STR);        
+        $stmt->bindParam(':street_address', $street_address, PDO::PARAM_STR);
+        $stmt->bindParam(':postcode', $postcode, PDO::PARAM_STR);
+        $stmt->bindParam(':number', $number, PDO::PARAM_STR);
+        $stmt->bindParam(':member_id', $member_id, PDO::PARAM_INT);
+
+       if(!$stmt->execute()){
+        print_r($stmt->errorInfo());
+        }
+    }
+
 }
