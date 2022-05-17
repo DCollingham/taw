@@ -8,7 +8,7 @@ $event = new Event();
 $eventArr = $event->viewEvents();
 ?>
 
-
+<!-- Join event form -->
 <h1 class="landing-header pt-5">Attend Event</h1>
 <div class="container test d-flex justify-content-center">
 

@@ -10,24 +10,10 @@ $event = new Event();
 $result = $event->viewEventRange();
 ?>
 
-
+<!-- Display event form -->
 <h1 class="landing-header pt-5">View Events</h1>
 <div class="container test d-flex justify-content-center">
 
-<!-- <div class="login-wrapper mt-2">
-
-    <form action="includes/view-events.inc.php" method="post">
-
-      <div class="form-group">
-        <input type="text" class="form-control" name="startDate" value="<?php echo htmlspecialchars($today); ?>">
-      </div>
-      <div class="form-group">
-        <input type="text" class="form-control" name="endDate" value="<?php echo htmlspecialchars($today); ?>">
-      </div>
-
-      <button type="submit" class="btn btn-primary" name="submit" btn-primary">Submit</button>
-    </form>
-</div> -->
 
 </div>
 

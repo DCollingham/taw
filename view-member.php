@@ -21,7 +21,7 @@ $result = $details->memberDetails($member_id);
 $imgObj = new Images();
 $images = $imgObj->getImages($member_id);
 ?>
-
+<!-- View and update member details -->
 <h1 class="landing-header pt-5" id="aboutus">Member Details</h1>
 <div class="container test d-flex justify-content-center">
 

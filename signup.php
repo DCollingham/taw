@@ -2,7 +2,7 @@
 include_once 'includes\header.inc.php'
 ?>
 
-
+<!-- Signup form -->
 <h1 class="landing-header pt-5" id="aboutus">Register</h1>
 <div class="container test d-flex justify-content-center">
 

@@ -8,7 +8,7 @@ $categories = new Category();
 $catArr = $categories->getCategory('open');
 ?>
 
-
+<!-- Display categorys -->
 <h1 class="landing-header pt-5" id="aboutus">Select Category</h1>
 <div class="container test d-flex justify-content-center">
 

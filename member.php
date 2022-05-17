@@ -1,7 +1,7 @@
 <?php
 require_once 'includes\header.inc.php'
 ?>
-
+<!-- Signup member form -->
 <h1 class="landing-header pt-5" id="aboutus">Become a full member to attend events</h1>
 <div class="container test d-flex justify-content-center">
 

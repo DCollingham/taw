@@ -31,14 +31,12 @@ if(isset($_POST["update"]))
     $number = $_POST["number"];
     $member_id = $_POST['member_id'];
 
-    echo $member_id;
-
     include "../classes/dbh.classes.php";
     include "../classes/member.classes.php";
     include "../classes/member.contr.classes.php";
     $member = new memberContr($first_name, $last_name, $address, $postcode, $number);
 
-    //Signs up member
+    //Updates member
     $member->setUpdate($member_id);
     header("location: ../select-member.php?error=noneUpdated");
 }

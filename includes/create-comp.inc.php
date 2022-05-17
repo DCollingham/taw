@@ -13,8 +13,8 @@ if(isset($_POST["submit"]))
     include "../classes/comp.contr.classes.php";
     $category = new CompContr($category, $date, $status);
 
-    //passed member object to member method
+    //create new category
     $category->newCategory();
-
+    //success message
     header("location: ../create-comp.php?error=noneCompCreated");
 }

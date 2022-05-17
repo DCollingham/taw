@@ -9,7 +9,7 @@ setAccessLevel('full');
 $category = new Category();
 $categories = $category->getCategory('open');
 ?>
-
+<!-- Image upload for members -->
 <h1 class="landing-header pt-5" id="aboutus">Enter Competition</h1>
 <div class="container test d-flex justify-content-center">
 

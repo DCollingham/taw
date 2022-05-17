@@ -6,7 +6,7 @@ $today = gmdate("d-m-Y");
 
 ?>
 
-
+<!-- Form to create event -->
 <h1 class="landing-header pt-5">Create Event</h1>
 <div class="container test d-flex justify-content-center">
 
